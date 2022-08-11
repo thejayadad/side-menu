@@ -5,8 +5,99 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+    body {
+        font-family: impact;
+        background-color: #486bc4;
+    }
+        #leftMenu {
+	height: 100%;
+	width: 0;
+	position: fixed;
+	z-index: 1;
+	top: 0;
+	left: 0;
+	background-color: #000;
+	overflow-x: hidden;
+	transition: 0.5s;
+	padding-top: 60px;
+}
+        .mainNav {
+	margin-top: 70px;
+}
+        .mainNav a {
+	margin-bottom: 15px;
+}
+        .content {
+	display: grid;
+	place-items: center;
+	height: 100vh;
+}
+        .content h2 {
+	font-family: impact;
+	text-align: center;
+	text-transform: uppercase;
+	font-size: 70px;
+}
+        #leftMenu a {
+	padding: 8px 8px 8px 10px;
+	text-decoration: none;
+	font-size: 25px;
+	color: #486bc4;
+	display: block;
+	transition: 0.4s;
+	text-align: center;
+	text-transform: uppercase;
+}
+        #leftMenu a:hover {
+	color: #fff;
+	background: #486bc4;
+}
+    #leftMenu .btn-area {
+        position: absolute;
+        top: 0;
+        right: 15px;
+        font-size: 40px;
+    }
+
+        span {
+	position: absolute;
+	right: 90px;
+	top: 30px;
+	font-size: 30px;
+	transition: 0.3s;
+	cursor: pointer;
+	color: #000;
+}
+    </style>
 </head>
 <body>
+    <div id="leftMenu">
+        <a href="javscript:void(0)" class="btn-area" onclick="closeBtn()">×</a>
+        <div class="mainNav">
+            <a href="#">Home</a>
+        <a href="#">Gallery</a>
+        <a href="#">Contact</a>
+     
+        </div>
+    </div>
+    <span onclick="openBtn()">☰ Menu</span>
     
+    <div class="content">
+        <h2>Side Menu</h2>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+        function openBtn()
+        {
+            document.getElementById("leftMenu").style.width = "250px";
+        }
+
+        function closeBtn()
+        {
+            document.getElementById("leftMenu").style.width = "0";
+        }
+    </script>
 </body>
 </html>
